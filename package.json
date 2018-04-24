@@ -1,0 +1,79 @@
+{
+  "name": "image-canvas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-watch",
+    "build": "babel src --out-dir .",
+    "clear": "yarn clear-files && yarn clear-folder",
+    "clear-files": "rimraf *.js",
+    "clear-folder": "rimraf constants && rimraf page && rimraf reducers  && rimraf utils ",
+    "test": "jest --config config/jest.config.js --bail",
+    "test:watch": "jest --config config/jest.config.js --watch",
+    "prepare": "yarn build"
+  },
+  "jest": {
+    "transform": {
+      ".js$": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedsphere/canvasImage.git"
+  },
+  "author": "Sebastian W <gswang88@gmail.com> (http://www.codedsphere.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codedsphere/canvasImage/issues"
+  },
+  "homepage": "https://github.com/codedsphere/canvasImage#readme",
+  "dependencies": {
+    "dexie": "^2.0.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.44",
+    "@babel/polyfill": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-es2015": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "@babel/preset-stage-1": "^7.0.0-beta.44",
+    "@babel/runtime": "^7.0.0-beta.44",
+    "babel-eslint": "^8.1.2",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^8.0.0-beta.2",
+    "babel-minify": "^0.3.0",
+    "babel-plugin-dynamic-import-node-babel-7": "^2.0.7",
+    "babel-plugin-import": "^1.6.7",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-uglify": "^1.0.2",
+    "cpx": "^1.5.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-formatter-pretty": "^1.3.0",
+    "eslint-import-resolver-jest": "^2.1.1",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
+    "jest-environment-jsdom-global": "^1.0.3",
+    "jest-enzyme": "^6.0.0",
+    "redux-mock-store": "^1.5.1",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-link": "^0.2.0"
+  }
+}

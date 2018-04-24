@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "8.9.1"
+script:
+  - yarn clear
+  - git checkout -- . 
+  - npm --no-git-tag-version version patch
+  - git add .
+  - git commit -m 'new version [ci skip]'
+  - git push origin HEAD:master
+  - yarn test
+  - npm publish
+before_install:
+  - npm i -g makeshift && makeshift -s @bcoe -r registry.npmjs.org
+  - git config credential.helper "store --file=.git/credentials"; echo "https://${GITHUB_OAUTH_TOKEN}:@github.com" > .git/credentials 2>/dev/null
+  - git config --global user.email ${USER_EMAIL}
+  - git config --global user.name ${USER_NAME}
+branches:
+  only:
+    - master
+deploy:
+  provider: npm
+  email: $USER_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
